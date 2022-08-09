@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome</title>
+    <style>
+        body {
+            padding: 20px 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #b4b4b4;
+        }
+        code {
+            display: block;
+            max-width: max-content;
+            padding: 10px;
+            font-size: 1.3em;
+            background-color: #505050;
+            color: #fff;
+            border-radius: 0px 10px 0px 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Por que a primeira conta mostrou um resultado errado?</h1>
+    <p>Isso aconteceu porque ao pedir a resposta de um prompt como o valor da variável, ele é considerado como uma string, e o sinal de "+" em JavaScript também é usado para concatenação além da adição, sendo assim, '1' + '1' (ambos considerados strings) resultam em '11' (uma única string formada das duas strings originais)</p>
+    <p>Para resolver esse "problema" precisamos converter a variável de uma string para um number, a forma mais fácil de fazer isso é adicional Number() em nossa string, tudo que estiver dentro de Number() será considerado um número (real ou inteiro)</p>
+    <p>Em algumas situações, pode ser útil que o números seja especificamente inteiro ou real, nesses casos, ao invés de usarmos Number() iremos usar Number.parseInt(para números inteiros) e Number.parseFloat(para números reais)</p>
+    <br>
+    <p><strong>Confira agora o código usado para efetuar essas contas:</strong></p>
+<pre><code>var n1 = window.prompt('Digite um número:') 
+var n2 = window.prompt('Digite outro número: ')
+c = n1 + n2
+alert('O resultado da soma é: ' + c + ' Bom... isso parece errado não é mesmo? Entenda o porquê a seguir...')
+var n3 = Number(window.prompt('Digite um número: '))
+var n4 = Number(window.prompt('Digite outro número: '))
+s = n3 + n4
+alert('O resultado da soma é: ' + s + ' Agora sim! Já vou explicar o que aconteceu na primeira conta, só preciso de mais alguns números...')
+var n5 = Number.parseInt(window.prompt('Digite um valor Inteiro:'))
+var n6 = Number.parseFloat(window.prompt('Agora um valor real: '))
+s2 = n5 + n6
+alert('O resultado da soma é: ' + s2 + ' Pronto, consegui entender o problema, vou te explicar agora...')</code></pre>
+
+    <script>
+       
+        var n1 = window.prompt('Digite um número:') 
+        var n2 = window.prompt('Digite outro número: ')
+        c = n1 + n2
+        alert(`O resultado da soma é: ${c} Bom... isso parece errado não é mesmo? Entenda o porquê a seguir...`)
+
+        /*
+        o + em JS pode ser usado tanto para soma quanto para concatenação, sendo:
+        (number + number) = soma
+        (string + string) = concatenação
+        Por padrão, o prompt retorna uma string como resultado,
+        então, ao invés de somar dois valores, esse script irá apenas 
+        juntar os dois valores digitados, pois são considerados strings
+        então, para realizar a soma, precisamos especificar que os 
+        valores são números
+        */
+
+        var n3 = Number(window.prompt('Digite um número: '))
+        var n4 = Number(window.prompt('Digite outro número: '))
+        s = n3 + n4
+        alert('O resultado da soma é: ' + s + ' Agora sim! Já vou explicar o que aconteceu na primeira conta, só preciso de mais alguns números...')
+        
+        /*
+        Usando o Number() nós convertemos a string em um número, garantindo que a soma seja efetuada corretamente
+        */
+
+        var n5 = Number.parseInt(window.prompt('Digite um valor Inteiro:'))
+        var n6 = Number.parseFloat(window.prompt('Agora um valor real: '))
+        s2 = n5 + n6
+        alert('O resultado da soma é: ' + s2 + ' Pronto, consegui entender o problema, vou te explicar agora...')
+        // Number.parseInt é usado para converter strings em números inteiros
+        // Number.parseFloat é usado para converter strings em números reais
+    </script>
+</body>
+</html>
