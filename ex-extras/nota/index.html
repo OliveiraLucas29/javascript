@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nome = prompt('Digite seu nome:')
+        var prova1 = Number(prompt('Nota da primeira prova:'))
+        var prova2 = Number(prompt('Nota da segunda prova:'))
+        var media = Number(prompt('Média necessária:'))
+        nota = (prova1 + prova2)/2
+        alert(`${nome} você foi ${nota>=media?'aprovado':'reprovado'} com uma média final de: ${nota}`)
+    </script>
+</body>
+</html>
