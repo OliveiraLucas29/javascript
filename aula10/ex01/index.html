@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função Clicar</title>
+    <style>
+        body {
+            background-color: lightgray;
+            padding: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        #btn{
+            background-color: #1bbd1b;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="btn"></div>
+
+    <script>
+        var b = document.getElementById('btn')
+        b.addEventListener('mousedown', clicarhold)
+        b.addEventListener('mouseup', unclick)
+        b.addEventListener('mouseenter', entrar)
+        b.addEventListener('mouseout', sair)
+
+        function clicarhold() {
+            b.style.background = 'black'
+        }
+        function unclick() {
+            b.style.background = '#1bbd1b'
+            b.style.width = '200px'
+            b.style.height = '200px'
+        }
+        function entrar() {
+            b.style.background = 'red'
+        }
+        function sair() {
+            b.style.background = '#1bbd1b'
+        }
+    </script>
+</body>
+</html>
