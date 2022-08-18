@@ -10,12 +10,33 @@
 <body>
     <main>
         <a class="back" href="index.html">&lAarr; Voltar para a Página Inicial</a>
+
+        <div class="calculo">
+            <form>
+                <div>
+                    <input type="number" name="tn1" id="tn1">
+                    <span class="symbol">x</span>
+                    <input type="number" name="tn2" id="tn2">
+                    <span class="symbol">=</span>
+                    <div id="result">?</div>
+                </div>
+                <input class="calcs" type="reset" value="Apagar">
+                <input type="button" value="Calcular" class="calcs" onclick="multi()">
+                
+            </form>
+        </div>
     </main>
+
     <script>
-        var n1 = Number(prompt('Digite um número: '))
-        var n2 = Number(prompt('Digite outro número: '))
-        var mult = n1*n2
-        alert(`O resultado da multiplicação é ${mult}`)
+        function multi() {
+            var tn1 = document.getElementById('tn1')
+            var tn2 = document.getElementById('tn2')
+            var r = document.getElementById('result')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            s = n1 * n2
+            r.innerHTML = s
+        }
     </script>
 </body>
 </html>
